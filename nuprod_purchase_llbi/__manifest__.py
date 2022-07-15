@@ -1,26 +1,25 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nuprod_purchase_llbi",
+    'name': "Purchase Llbi Nuprod",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Add functionality to module purchase""",
 
     'description': """
-        Long description of module's purpose
+        Handle format for steel plate
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Nuprod",
+    'website': "https://www.nuprod.fr",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Customizations',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'purchase', 'sale'],
 
     # always loaded
     'data': [
