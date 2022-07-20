@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="nuprod_purchase_llbi.list">
+      <field name="name">nuprod_purchase_llbi list</field>
+      <field name="model">nuprod_purchase_llbi.nuprod_purchase_llbi</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="nuprod_purchase_llbi.action_window">
+      <field name="name">nuprod_purchase_llbi window</field>
+      <field name="res_model">nuprod_purchase_llbi.nuprod_purchase_llbi</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="nuprod_purchase_llbi.action_server">
+      <field name="name">nuprod_purchase_llbi server</field>
+      <field name="model_id" ref="model_nuprod_purchase_llbi_nuprod_purchase_llbi"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="nuprod_purchase_llbi" id="nuprod_purchase_llbi.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="nuprod_purchase_llbi.menu_1" parent="nuprod_purchase_llbi.menu_root"/>
+    <menuitem name="Menu 2" id="nuprod_purchase_llbi.menu_2" parent="nuprod_purchase_llbi.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="nuprod_purchase_llbi.menu_1_list" parent="nuprod_purchase_llbi.menu_1"
+              action="nuprod_purchase_llbi.action_window"/>
+    <menuitem name="Server to list" id="nuprod_purchase_llbi" parent="nuprod_purchase_llbi.menu_2"
+              action="nuprod_purchase_llbi.action_server"/>
+-->
+  </data>
+</odoo>
