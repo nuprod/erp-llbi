@@ -32,7 +32,7 @@ class FrSiretLookup(models.TransientModel):
                 )
             res.update(
                 {
-                    "name": partner.name,
+                    "name": partner.name.upper() + " " + partner.zip,
                     "partner_id": partner.id,
                 }
             )
@@ -49,8 +49,8 @@ class FrSiretLookup(models.TransientModel):
             zipcode = zipcode.zfill(5)
             country_id = self.env["res.partner"]._opendatasoft_compute_country(zipcode)
         return {
-            "name": data.get("denominationunitelegale")
-            or data.get("l1_adressage_unitelegale"),
+            "name": data.get("denominationunitelegale").title()
+            or data.get("l1_adressage_unitelegale").title(),
             "street": data.get("adresseetablissement"),
             "zip": zipcode,
             "city": data.get("libellecommuneetablissement"),
@@ -112,7 +112,7 @@ class FrSiretLookupLine(models.TransientModel):
         self.ensure_one()
         vat = self.env["res.partner"]._siren2vat_vies(self.siren, raise_if_fail=True)
         vals = {
-            "name": self.name,
+            "name": self.name.title(),
             "street": self.street,
             "zip": self.zip,
             "city": self.city,

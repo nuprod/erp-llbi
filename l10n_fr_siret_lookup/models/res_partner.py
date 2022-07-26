@@ -115,14 +115,14 @@ class ResPartner(models.Model):
             if exclude_dead and raw_record.get("datefermetureetablissement"):
                 return res
             res = {
-                "name": raw_record.get("denominationunitelegale").capitalize()
-                or raw_record.get("l1_adressage_unitelegale").capitalize(),
+                "name": raw_record.get("denominationunitelegale").title()
+                or raw_record.get("l1_adressage_unitelegale").title(),
                 "street": raw_record.get("adresseetablissement"),
                 "city": raw_record.get("libellecommuneetablissement"),
                 "siren": raw_record.get("siren") and str(raw_record["siren"]) or False,
                 "nic": raw_record.get("nic"),
-                "ape":raw_record.get("activiteprincipaleunitelegale"),
-                "ape_label":raw_record.get("divisionunitelegale"),
+                "ape": raw_record.get("activiteprincipaleunitelegale"),
+                "ape_label": raw_record.get("divisionunitelegale"),
             }
             # In feb 2022, they changed codepostaletablissement and
             # codedepartementetablissement from string to integer
