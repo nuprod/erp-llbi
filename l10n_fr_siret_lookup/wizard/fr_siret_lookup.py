@@ -1,5 +1,6 @@
 # Copyright 2018-2021 Le Filament (<http://www.le-filament.com>)
 # Copyright 2021 Akretion France (http://www.akretion.com/)
+# Copyright 2022 Nuprod (http://www.nuprod.fr)
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -32,7 +33,7 @@ class FrSiretLookup(models.TransientModel):
                 )
             res.update(
                 {
-                    "name": partner.name.upper() + " " + partner.zip,
+                    "name": partner.name.upper() + " " + partner.zip or partner.name.upper(),
                     "partner_id": partner.id,
                 }
             )
