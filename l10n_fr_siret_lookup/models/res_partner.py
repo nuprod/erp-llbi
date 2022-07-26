@@ -115,7 +115,7 @@ class ResPartner(models.Model):
             if exclude_dead and raw_record.get("datefermetureetablissement"):
                 return res
             res = {
-                "name": raw_record.get("denominationunitelegale").capitalize(),
+                "name": raw_record.get("denominationunitelegale"),
                 or raw_record.get("l1_adressage_unitelegale"),
                 "street": raw_record.get("adresseetablissement"),
                 "city": raw_record.get("libellecommuneetablissement"),
